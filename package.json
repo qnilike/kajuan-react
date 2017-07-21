@@ -1,15 +1,8 @@
 {
-  "name": "react-demo",
+  "name": "kajuan-react",
   "version": "0.1.0",
   "description": "react start with es6 and webpack3.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/LuckSingh/react-demo.git"
-  },
-  "author": {
-    "name": "LuckSingh",
-    "email": "tongxinge108@163.com"
-  },
+  "author": "",
   "scripts": {
     "start": "webpack-dev-server --hot --watch --inline --colors",
     "build": "webpack"

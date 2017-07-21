@@ -5,5 +5,14 @@ import {
 } from 'react-router-dom'
 
 import Cancell from '../../Cancell/Script/Cancell'
-import Coupon from '../../Cancell/Script/Coupon'
-import Layout from 'Layout'
+import Coupon from '../../Coupon/Script/Coupon'
+import Layout from '../../Common/Script/Layout'
+
+const Routes= () => {
+	<Router>
+		<Layout />
+		<Route exact path="/" component={Coupon} />
+		<Route path="/cancell" component={Cancell} />
+	</Router>
+}
+export default Routes
