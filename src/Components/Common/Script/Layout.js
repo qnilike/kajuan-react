@@ -1,16 +1,45 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { BrowserRouter as Router,Route,Link} from 'react-router-dom'
-import '../Less/style.less'
+import {
+	BrowserRouter as Router,
+	Route,
+	Link
+} from 'react-router-dom'
+import '../Less/style'
 
-export default class Layout extends React.Component{
-	constructor(props){
+const MenuLink = ({
+	label,
+	to,
+	activeOnlyWhenExact
+}) => ( < Route path = {
+		to
+	}
+	exact = {
+		activeOnlyWhenExact
+	}
+	children = {
+		({
+			match
+		}) => (
+			<div className={match ? 'active' : ''}>
+      <Link to={to}>{label}</Link>
+    </div>
+		)
+	}
+	/>
+)
+
+export default class Layout extends React.Component {
+	constructor(props) {
 		super(props);
 	}
 
 	render() {
 		return (
-				<div>大大大的</div>
-			);
+			<div class="menu">
+				<MenuLink activeOnlyWhenExact={true} to="/" label="卡券一览" />
+				<MenuLink to="/cancell" label="核销卡券"/>
+			</div>
+		);
 	}
 }
