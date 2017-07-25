@@ -5,7 +5,7 @@ import '../Less/style'
 
 const dataSource = [{
   key: '1',
-  name: '胡彦斌',
+  name: '胡彦斌111',
   age: 32,
   address: '西湖区湖底公园1号'
 }, {
@@ -16,7 +16,7 @@ const dataSource = [{
 }];
 
 const columns = [{
-  title: '姓名',
+  title: '姓名3333',
   dataIndex: 'name',
   key: 'name',
 }, {

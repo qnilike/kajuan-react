@@ -1,8 +1,41 @@
-@import '../../../static/main';
+
+.bgH{background: #F0F0F1;}
+.pa{position: absolute;}
+.clfff{color:#fff;}
+.dib{display: inline-block;}
+.tl{text-align: left;}.tc{text-align: center;}.tr{text-align: right;}
+
+@menuWidth:200px;
+@menuHeight:50px;
 .menu{
-	position: absolute;
+	.pa;
 	left:0;
 	top:0;
 	bottom: 0;
-	.bg333;
+	.bgH;
+	.tc;
+	width:@menuWidth;
+	& div.active{
+		background: #fff;
+		& a{
+			color:#ff584d;
+		}
+	}
+	& a{
+		.dib;
+		height: @menuHeight;
+		line-height: @menuHeight;
+		color:#969696;
+	}
+}
+.couponTit{
+	.tl;
+	color:#666;
+	height: @menuHeight;
+	line-height: @menuHeight;
+	font-size: 14px;
+	.logo{
+		vertical-align: middle;
+		margin:0 6px;
+	}
 }

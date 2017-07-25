@@ -16,11 +16,11 @@ const dataSource = [{
 }];
 
 const columns = [{
-  title: '姓名',
+  title: '姓名111',
   dataIndex: 'name',
   key: 'name',
 }, {
-  title: '年龄',
+  title: '年龄111',
   dataIndex: 'age',
   key: 'age',
 }, {

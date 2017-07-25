@@ -10,7 +10,9 @@ export default class Cancell extends React.Component {
 	render() {
 		return (
 			<div className="content">
-				ddddd
+				<div className="cancell">
+					bbbb	
+				</div>
 			</div>
 		);
 	}
