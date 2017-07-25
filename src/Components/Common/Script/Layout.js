@@ -36,7 +36,7 @@ export default class Layout extends React.Component {
 
 	render() {
 		return (
-			<div class="menu">
+			<div className="menu">
 				<MenuLink activeOnlyWhenExact={true} to="/" label="卡券一览" />
 				<MenuLink to="/cancell" label="核销卡券"/>
 			</div>

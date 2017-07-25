@@ -11,10 +11,10 @@ export default class Coupon extends React.Component {
 	}
 
 	render() {
-		return (<div>
-			<Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
-          <Button>Delete</Button>
-        </Popconfirm>
-		</div>);
+		return (
+			<div className="content">
+				ddddd
+			</div>
+		);
 	}
 }

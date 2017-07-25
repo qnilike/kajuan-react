@@ -8,6 +8,10 @@ export default class Cancell extends React.Component {
 	}
 
 	render() {
-		return (<div className="hello">bbbbbbbb</div>);
+		return (
+			<div className="content">
+				ddddd
+			</div>
+		);
 	}
 }
