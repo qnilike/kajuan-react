@@ -1,0 +1,11 @@
+第一、
+
+  export有两种情况，一种是普通的export，一种是export default
+
+  当用export default的时候，你可以用import aa from path;，注意这里不加{}，这里的aa就是export default后面的值
+
+  当用export的时候，就可以用import { bb, cc } from path;，注意这里有{}。这里的bb,cc就是export bb;后面的bb
+ 
+第二、
+
+   style={{backgroundColor:'red',color:'white',fontSize:40}}
