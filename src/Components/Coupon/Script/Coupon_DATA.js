@@ -1,14 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import {
-	Table,
-	Menu,
-	Dropdown,
-	Icon,
-	message,
-	Button,
-	Modal
-} from 'antd'
+
 const Coupon_DATA = [{
 	title: '卡券类型',
 	dataIndex: 'couponType',

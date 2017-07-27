@@ -19,3 +19,61 @@
 .ant-table-body table tr th,.ant-table-body table tr td{
 	.tc;
 }
+.couponAdd{
+	.coupon-head{	
+		& h2,.subtit{
+			height: 50px;
+			line-height: 50px;
+		}
+		h2{
+			font-size: 16px;
+			border-bottom:1px solid #ccc;
+		}
+		.subtit{
+			font-size: 14px;
+		}
+	}
+	.coupon-choose{
+		padding: 15px 20px;
+		background: #eee;
+		div{
+			width: 208px;
+			height: 84px;
+			margin-right: 20px;
+			position: relative;
+			.tc;
+		}
+		div.djq{
+			background: url('/static/images/djq.png') no-repeat center;
+		}
+		div.lpq{
+			background: url('/static/images/lpq.png') no-repeat center;
+		}
+		div.zkq{
+			background: url('/static/images/zkq.png') no-repeat center;
+		}
+		.couponLayout{
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: url('/static/images/pyqbg.png') no-repeat center;
+			width:100%;
+			height:100%;
+			p{
+				z-index: 10;
+				color:#fff;
+				margin-top:14px;
+			}
+			.createBtn{
+				display: inline-block;
+				padding: 4px 14px;
+				background: #fff;
+				border-radius: 6px;
+				color:#333;
+				margin-top: 6px;
+				cursor:pointer;
+			}
+		}
+
+	}
+}

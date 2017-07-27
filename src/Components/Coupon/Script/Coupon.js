@@ -1,18 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
-import {
-  Table,
-  Select,
-  Icon,
-  message,
-  Button,
-  Modal
-} from 'antd'
+import { BrowserRouter as Router,Route,Link } from 'react-router-dom'
+import { Table, Select, Icon, Button, Modal } from 'antd'
 import '../Less/style'
 import Coupon_DATA from './Coupon_DATA'
 import CreateCoupon from './CreateCoupon'
@@ -37,19 +26,9 @@ function getData() {
   return a;
 }
 
-
-// const menu = (
-//   <Menu onClick={menuClick}>
-//     <Menu.Item key="1">星巴克卡券</Menu.Item>
-//     <Menu.Item key="2">上岛卡券</Menu.Item>
-//     <Menu.Item key="3">屈臣氏卡券</Menu.Item>
-//   </Menu>
-// );
-
 const menuClick = function(value) {
   console.log(value)
 };
-
 
 export default class Coupon extends React.Component {
   constructor(props) {
@@ -63,9 +42,7 @@ export default class Coupon extends React.Component {
   }
 
   componentDidMount() {
-    let {
-      dataSource
-    } = this.state;
+    let { dataSource } = this.state;
     a = getData();
 
     this.setState({
@@ -74,11 +51,7 @@ export default class Coupon extends React.Component {
   }
 
   render() {
-    let {
-      dataSource,
-      couponSource,
-      couponSubSource
-    } = this.state;
+    let { dataSource,couponSource,couponSubSource } = this.state;
     return (
       <div className="content">
         <div className="couponHead clearfix">
@@ -88,9 +61,8 @@ export default class Coupon extends React.Component {
             <Option value="lucy">Lucy</Option>
             <Option value="disabled" disabled>Disabled</Option>
             <Option value="Yiminghe">yiminghe</Option>
-          </Select>
-          
-    <Button className="fr" type="primary" style={{marginTop:12}}><Link to="./createCoupon">创建卡券</Link></Button>
+          </Select>  
+          <Button className="fr" type="primary" style={{marginTop:12}}><Link to="./CreateCoupon">创建卡券</Link></Button>
         </div>
 				<div className="coupon">
 					<Table dataSource={dataSource} columns={Coupon_DATA} />	

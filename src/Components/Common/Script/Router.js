@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-	BrowserRouter as Router,
-	Route
-} from 'react-router-dom'
+import { BrowserRouter as Router,Route } from 'react-router-dom'
 
 import Cancell from '../../Cancell/Script/Cancell'
 import Coupon from '../../Coupon/Script/Coupon'
@@ -16,11 +13,11 @@ const Routes = () => (
 	<Router>
 		<div>
 			<Layout />
-			<Route exact path="/" component={Coupon} />
+			<Route exact path="/" component={Coupon} />			
 			<Route path="/cancell" component={Cancell} />
 			<Route path="/datacount" component={DataCount} />
-			<Route path="/appopen" component={AppOpen} />
-			<Route path="/createCoupon" component={CreateCoupon} />
+			<Route path="/appopen" component={AppOpen} />	
+			<Route path="/CreateCoupon" component={CreateCoupon} />
 		</div>
 	</Router>
 )
