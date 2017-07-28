@@ -13,11 +13,11 @@ export default class Coupon extends React.Component {
     		<div className="content">
     			<div className="couponAdd">
                     <div className="coupon-type">
-                        <div className="coupon-head">
+                        <div className="content-head">
                             <h2>卡券管理</h2>
                             <p className="subtit">&nbsp;&nbsp;&nbsp;创建卡券 > 选择卡券类型</p>
                         </div>
-                        <div className="coupon-body">
+                        <div className="content-body">
                              <div className="coupon-choose clearfix">
                                 <div className="fl djq" onMouseOver={this.djqLayout}>
                                     <div className="couponLayout coupondjq">

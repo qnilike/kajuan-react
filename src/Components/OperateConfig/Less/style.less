@@ -1,0 +1,94 @@
+@import '~antd/dist/antd.css';
+@import '../../Common/Less/main';
+
+.mb{
+	margin-bottom: 10px;
+}
+.operate-config{
+	.operate-left{
+		width:300px;
+		.operate-show{
+			margin:15px 20px;
+			border:1px solid #333;
+			background: #ccc;
+			height: 400px;
+			position: relative;
+			.operate-img{
+				width: 200px;
+				border:1px solid #333;
+				background: #ff584d;
+				position: absolute;
+				left:50%;
+				top:50%;
+				margin-top: -135px;
+				margin-left: -100px;
+				color: #fff;
+			}
+			.counpon-list{
+				.counpon-simple{
+					border:1px solid #fff;
+					margin: 15px 8px;
+					padding:10px 8px;
+					.counpon-money{
+						sup{
+							top:-1rem;
+						}
+						span{
+							font-size: 30px;
+						}
+					}
+					.counpon-explain{
+						margin-left: 22px;
+						margin-top: 3px;
+						p{
+							line-height:20px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.operate-right{
+		width:65%;
+		font-size: 14px;
+		margin-left: 20px;
+		.operate-rtit{
+			display: inline-block;
+			width:100px;
+			i{
+				display: inline-block;
+				color:red;
+				margin-right:6px;
+			}
+		}
+		.operate-bgImg{
+			.operate-explain p{
+				font-size: 12px;
+			}
+		}
+		.operate-count{
+			height: 50px;
+			line-height: 50px;
+		}
+		.yyw-count{
+			>div{
+				margin-top:6px;
+				margin-bottom: 10px;
+			}
+			.add-conpun{
+				color:#ff584d;
+				cursor: pointer;
+				height:30px;
+				line-height: 30px;
+			}
+			.counpon-name{
+				padding:12px 15px;
+				background: #eee;
+				p{
+					line-height:22px;
+					text-indent: 2em;
+				}
+			}
+		}
+	}
+}

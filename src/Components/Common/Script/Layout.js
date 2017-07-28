@@ -24,6 +24,7 @@ export default class Layout extends React.Component {
 				<MenuLink to="/cancell" label="核销卡券"/>
 				<MenuLink to="/datacount" label="数据统计"/>
 				<MenuLink to="/appopen" label="应用开通"/>
+				<MenuLink to="/operateconfig" label="运营位配置"/>
 			</div>
 		);
 	}
