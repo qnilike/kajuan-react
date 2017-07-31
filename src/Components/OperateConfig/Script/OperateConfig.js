@@ -18,7 +18,7 @@ const data = [{
 	couponType: "团购券1",
 	couponName: "美团团购券1",
 	couponVaild: '领券后当天有效，有效期30天',
-	applyStore: "肯德基十里河店、肯德基四惠店",
+	applyStore: ['肯德基十里河店','肯德基四惠店','肯德基十里河店','肯德基十里河店'],
 	couponStock: '19',
 	price: 3
 }, {
@@ -26,7 +26,7 @@ const data = [{
 	couponType: "团购券2",
 	couponName: "美团团购券2",
 	couponVaild: '领券后当天有效，有效期30天',
-	applyStore: "肯德基十里河店、肯德基四惠店",
+	applyStore: ['肯德基十里河店','肯德基四惠店','肯德基十里河店','肯德基十里河店'],
 	couponStock: '19',
 	price: 4
 }, {
@@ -34,7 +34,7 @@ const data = [{
 	couponType: "团购券3",
 	couponName: "美团团购券3",
 	couponVaild: '领券后当天有效，有效期30天',
-	applyStore: "肯德基十里河店、肯德基四惠店",
+	applyStore: ['肯德基十里河店','肯德基四惠店','肯德基十里河店','肯德基十里河店'],
 	couponStock: '19',
 	price: 5
 }];
@@ -58,7 +58,6 @@ export default class Coupon extends React.Component {
 			opreateCount: 1,
 			//投放卡券弹出
 			visible: false,
-
 			//设置模态框的宽Modal
 			width: 730,
 			//单选选择展示不同的运营位
@@ -69,12 +68,12 @@ export default class Coupon extends React.Component {
 			select2: false,
 			select3: false,
 			select1Info: false,
+			select2Info: false,
+			select3Info: false,
 			selectData: [],
 			selectData2: [],
 			selectData3: [],
-			selectType1: false,
-			selectType2: false,
-			selectType3: false
+			defaultValue:'待选择'
 
 		}
 	}
@@ -85,11 +84,13 @@ export default class Coupon extends React.Component {
 			select2,
 			select3,
 			select1Info,
+			select2Info,
+			select3Info,
 			selectData,
 			selectData2,
-			selectData3
+			selectData3,
+			defaultValue
 		} = this.state;
-
 
 		return (
 			<div className="content">
@@ -164,7 +165,6 @@ export default class Coupon extends React.Component {
 						     <div className="operate-explain">
 						     	<p>1.你可以上传：JPG、JPEG、PNG、GIF格式图片</p>
 						     	<p>2.推荐尺寸：888 x 528 px</p>
-						     	<p>3.至少上传一张照片</p>
 						     </div>
                     	</div>
 						<div className="operate-count">
@@ -178,11 +178,11 @@ export default class Coupon extends React.Component {
 						<div className="yyw-count">
 							<div className="operate-first" style={{ display:"block" }}>
 								<span className="operate-rtit"><i>*</i>运营位1类型</span> 
-								<Select defaultValue="待选择" style={{ width: 120 }} onChange={this.select1Change}>
+								<Select defaultValue={this.state.defaultValue} style={{ width: 120 }} onChange={this.select1Change}>
 							      <Option value="待选择">待选择</Option>
 							      <Option value="优惠券">优惠券</Option>
 							    </Select>
-							    <div>
+							    <div className="ml100">
 							    	<h3 className={select1 ? "add-conpun" : "none"} onClick={this.showModal.bind(this,1)}>点击配置卡券</h3>
 							    	<div className= {select1Info?"counpon-name":'none'}   >
 							    		<h2>卡券信息：</h2>
@@ -195,13 +195,13 @@ export default class Coupon extends React.Component {
 						    </div>
 							<div className={this.state.operate2 ? "" : "none"+" " +"operate-second"}>
 							    <span className="operate-rtit"><i>*</i>运营位2类型</span> 
-								<Select defaultValue="待选择" style={{ width: 120 }} onChange={this.select2Change}>
+								<Select defaultValue={this.state.defaultValue} style={{ width: 120 }} onChange={this.select2Change}>
 							      <Option value="待选择">待选择</Option>
 							      <Option value="优惠券">优惠券</Option>
 							    </Select>
-							    <div>
+							    <div className="ml100">
 							    	<h3 className={select2 ? "add-conpun" : "none"} onClick={this.showModal.bind(this,2)}>点击配置卡券</h3>
-							    	<div className="counpon-name none">
+							    	<div className= {select2Info?"counpon-name":'none'}>
 							    		<h2>卡券信息：</h2>
 							    		<p>优惠券名称：99元代金券</p>
 							    		<p>优惠券金额：99</p>
@@ -212,13 +212,13 @@ export default class Coupon extends React.Component {
 						    </div>
 						    <div className={this.state.operate3 ? "" : "none"+" " +"operate-third"}>
 							    <span className="operate-rtit"><i>*</i>运营位3类型</span> 
-								<Select defaultValue="待选择" style={{ width: 120 }} onChange={this.select3Change}>
+								<Select defaultValue={this.state.defaultValue} style={{ width: 120 }} onChange={this.select3Change}>
 							      <Option value="待选择">待选择</Option>
 							      <Option value="优惠券">优惠券</Option>
 							    </Select>
-							    <div>
+							    <div className="ml100">
 							    	<h3 className={select3 ? "add-conpun" : "none"} onClick={this.showModal.bind(this,3)}>点击配置卡券</h3>
-							    	<div className="counpon-name none">
+							    	<div className= {select3Info?"counpon-name":'none'}>
 							    		<h2>卡券信息：</h2>
 							    		<p>优惠券名称：99元代金券</p>
 							    		<p>优惠券金额：99</p>
@@ -253,23 +253,46 @@ export default class Coupon extends React.Component {
 					this.setState({
 						'operate2': false,
 						'operate3': false,
+						selectData: [],
 						selectData2: [],
-						selectData3: []
+						selectData3: [],
+						select1: false,
+						select2: false,
+						select3: false,
+						select1Info: false,
+						select2Info: false,
+						select3Info: false
 					});
 					break;
 				case 2:
 					this.setState({
 						'operate2': true,
 						'operate3': false,
+						selectData: [],
+						selectData2: [],
 						selectData3: [],
-
+						select1: false,
+						select2: false,
+						select3: false,
+						select1Info: false,
+						select2Info: false,
+						select3Info: false
 					});
 					break;
 				case 3:
 					this.setState({
 						'operate2': true,
 						'operate3': true,
-						'select3': false
+						'select3': false,
+						selectData: [],
+						selectData2: [],
+						selectData3: [],
+						select1: false,
+						select2: false,
+						select3: false,
+						select1Info: false,
+						select2Info: false,
+						select3Info: false
 					});
 					break;
 				default:
@@ -328,19 +351,31 @@ export default class Coupon extends React.Component {
 				index,
 				selectData,
 				selectData2,
-				selectData3
+				selectData3,
+				select1Info,			
+				select2Info,
+				select3Info
 
 			} = this.state;
 
 			switch (index) {
 				case 1:
-					selectData = selectInfo
+					selectData = selectInfo,
+					this.setState({
+						select1Info:true
+					});
 					break;
 				case 2:
-					selectData2 = selectInfo
+					selectData2 = selectInfo,
+					this.setState({
+						select2Info:true
+					});
 					break;
 				case 3:
-					selectData3 = selectInfo
+					selectData3 = selectInfo,
+					this.setState({
+						select3Info:true
+					});
 					break;
 			}
 
